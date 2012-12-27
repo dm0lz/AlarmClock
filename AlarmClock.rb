@@ -13,16 +13,21 @@ scheduler = Rufus::Scheduler::start_new
 binding.pry
 heure = Rufus.parse_time_string '5s'
 
+
+#begin
 binding.pry	
 
-begin
+
 	scheduler.in heure do
-		binding.pry
-		system "open '/Users/molz/Desktop/OyeComoVa.mp3'"
+		#binding.pry
+
+		puts "oooo"
 	end
-rescue Exception => e
-	binding.pry
-	puts e.message  
-  	puts e.backtrace.inspect  
-end
+	sleep heure+1
+
+#rescue Exception => e
+#	binding.pry
+#	puts e.message  
+#  	puts e.backtrace.inspect  
+#end
 
